@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head></head>
+<body onload="myfun()">
+<div>
+<input type="text" id="input" placeholder="Search With Keyword" >
+
+  <button type="submit" onclick="sorting()" >search</button>
+
+  <button type="submit" onclick="BBCNews()" >BBC NEWS</button>
+  <button type="submit" onclick="BBCSports()" >BBC SPORTS</button>
+  <button type="submit" onclick="ABC()" >ABC</button>
+  <button type="submit" onclick="ESPN()" >ESPN</button>
+  <button type="submit" onclick="BusinessInsider()" >Business Insider</button>
+  <button type="submit" onclick="Buzzfeed()" >Buzzfeed</button>
+  <button type="submit" onclick="CNBC()" >CNBC</button>
+  <button type="submit" onclick="CNN()" >CNN</button>
+<form>
+  <input type="checkbox" id="ch0" value="bbc-news">BBC NEWS <br>
+  <input type="checkbox" id="ch1" value="bbc-sport">BBC SPORTS <br>
+  <input type="checkbox" id="ch2" value="abc-news">ABC <br>
+  <input type="checkbox" id="ch3" value="espn">ESPN <br>
+  <input type="checkbox" id="ch4" value="business-insider">Business Insider <br>
+  <input type="checkbox" id="ch5" value="buzzfeed">Buzzfeed <br>
+  <input type="checkbox" id="ch6" value="cnbc">CNBC <br>
+  <input type="checkbox" id="ch7" value="cnn">CNN <br>
+</form>
+
+<h1 id="headline0"></h1>
+<h1 id="headline1"></h1>
+<h1 id="headline2"></h1>
+<h1 id="headline3"></h1>
+<h1 id="headline4"></h1>
+<h1 id="headline5"></h1>
+<h1 id="headline6"></h1>
+<h1 id="headline7"></h1>
+<h1 id="headline8"></h1>
+<h1 id="headline9"></h1>
+<h2 id="notfound"></h1>
+
+</div>
+<script>
+//main head lines
+function myfun()
+{
+ fetch("https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+     .then(data =>{
+      for(var i=0;i<data.articles.length;i++)
+       {document.getElementById("headline"+i)
+         .innerHTML=data.articles[i].title;}})
+ .catch((err)=> {console.error(err);})
+}
+//different channels
+function BBCNews()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function BBCSports()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function ABC()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function ESPN()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=espn&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function BusinessInsider()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=business-insider&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function Buzzfeed()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function CNBC()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=cnbc&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+function CNN()
+{
+  fetch("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  .then(data => data.json())
+       .then(data =>{
+         for(var i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+  .catch((err)=> {console.error(err);})
+}
+//searching in all channels
+function globalSearch()
+{
+  let x=document.getElementById("input").value;
+
+  fetch(`https://newsapi.org/v2/everything?q=${x}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
+ .then(data => data.json())
+    .then(data =>{
+  // console.log(data);
+      if(data.status=="ok" && data.totalResults!=0){
+      for(let i=0;i<data.articles.length;i++)
+       {document.getElementById("headline"+i)
+         .innerHTML=data.articles[i].title;}
+  }
+  else
+       {document.getElementById("notfound").innerHTML="News Not Found Related To Your Search";}
+       })
+  .catch((err)=> {console.error(err);})
+}
+//filter
+function sorting()
+{
+  let x=document.getElementById("input").value;
+ var search=[];
+ for(i=0;i<8;i++)
+ {
+   if(document.getElementById("ch"+i).checked)
+   { let v1=document.getElementById("ch"+i).value;
+     search.push(v1);
+   }
+ }
+
+ fetch(`https://newsapi.org/v2/top-headlines?q=${x}&sources=${search}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
+    .then(data => data.json())
+       .then(data =>{
+        for(let i=0;i<data.articles.length;i++)
+         {document.getElementById("headline"+i)
+           .innerHTML=data.articles[i].title;}})
+   .catch((err)=> {console.error(err);})
+  }
+
+</script>
+</body>
+</html>
