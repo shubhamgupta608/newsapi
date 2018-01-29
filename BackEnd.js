@@ -1,68 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-<head></head>
-<body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();} >
-
-<input type="text" id="input" placeholder="Search With Keyword" >
-
-  <button type="submit" onclick="sorting()">search</button>
-
-  <button type="submit" onclick="BBCNews()" >BBC NEWS</button>
-  <button type="submit" onclick="BBCSports()" >BBC SPORTS</button>
-  <button type="submit" onclick="ABC()" >ABC</button>
-  <button type="submit" onclick="ESPN()" >ESPN</button>
-  <button type="submit" onclick="BusinessInsider()" >Business Insider</button>
-  <button type="submit" onclick="Buzzfeed()" >Buzzfeed</button>
-  <button type="submit" onclick="CNBC()" >CNBC</button>
-  <button type="submit" onclick="CNN()" >CNN</button>
-<form>
-  <input type="checkbox" id="ch0" value="bbc-news">BBC NEWS <br>
-  <input type="checkbox" id="ch1" value="bbc-sport">BBC SPORTS <br>
-  <input type="checkbox" id="ch2" value="abc-news">ABC <br>
-  <input type="checkbox" id="ch3" value="espn">ESPN <br>
-  <input type="checkbox" id="ch4" value="business-insider">Business Insider <br>
-  <input type="checkbox" id="ch5" value="buzzfeed">Buzzfeed <br>
-  <input type="checkbox" id="ch6" value="cnbc">CNBC <br>
-  <input type="checkbox" id="ch7" value="cnn">CNN <br>
-</form>
-
-
-<div>
-<a href="" id="li0"><h1 id="headline0"></h1></a>
-<img id="image0" src="" alt="image not loaded" width="304" height="228"/>
-<p id="de0"></p>
-<a href="" id="li1"><h1 id="headline1"></h1></a>
-<img id="image1"  src="" alt="image not loaded" width="304" height="228"/>
-<p id="de1"></p>
-<a href="" id="li2"><h1 id="headline2"></h1></a>
-<img id="image2"  src="" alt="image not loaded" width="304" height="228"/>
-<p id="de2"></p>
-<a href="" id="li3"><h1 id="headline3"></h1></a>
-<img id="image3" src="" alt="image not loaded" width="304" height="228"/>
-<p id="de3"></p>
-<a href="" id="li4"><h1 id="headline4"></h1></a>
-<img id="image4" src="" alt="image not loaded" width="304" height="228"/>
-<p id="de4"></p>
-<a href="" id="li5"><h1 id="headline5"></h1></a>
-<img id="image5" src=""  alt="image not loaded" width="304" height="228"/>
-<p id="de5"></p>
-<a href="" id="li6"><h1 id="headline6"></h1></a>
-<img id="image6"  src="" alt="image not loaded" width="304" height="228"/>
-<p id="de6"></p>
-<a href="" id="li7"><h1 id="headline7"></h1></a>
-<img id="image7"  src="" alt="image not loaded" width="304" height="228"/>
-<p id="de7"></p>
-<a href="" id="li8"><h1 id="headline8"></h1></a>
-<img id="image8"  src="" alt="image not loaded" width="304" height="228"/>
-<p id="de8"></p>
-<a href="" id="li9"><h1 id="headline9"></h1></a>
-<img id="image9"  src="" alt="image not loaded" width="304" height="228"/>
-<p id="de9"></p>
-
-</div>
-
-<script>
-//main head lines
 function myfun()
 {
  fetch("https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
@@ -74,9 +9,7 @@ function myfun()
           document.getElementById("li"+i).href=data.articles[i].url;
          document.getElementById('image'+i).src=data.articles[i].urlToImage;
          document.getElementById("de"+i).innerHTML=data.articles[i].description;
-
-
-}
+       }
      })
  .catch((err)=> {console.error(err);})
 }
@@ -219,8 +152,10 @@ let x=document.getElementById("input").value;
      search.push(v1);
    }
  }
+ if(x.length>0)
+ {
  if(search.length >0)
-{
+ {
    fetch(`https://newsapi.org/v2/everything?q=${x}&sources=${search}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
     .then(data => data.json())
        .then(data =>{
@@ -236,15 +171,13 @@ let x=document.getElementById("input").value;
         document.getElementById("de"+i).innerHTML=data.articles[i].description;}
          }})
 }
-else {
+else
   {
-    alert("please select atleast one channel");
+    alert("Please Select Atleast One Channel");
   }
 }
-
+else
+  {
+    alert("Please Enter any KeyWord to Search");
+  }
 }
-
-
-</script>
-</body>
-</html>
