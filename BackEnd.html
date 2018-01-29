@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head></head>
-<body onload="myfun()">
-<div>
+<body onload="myfun()" onkeypress=if(event.keyCode==13){globalSearch();}>
+
 <input type="text" id="input" placeholder="Search With Keyword" >
 
-  <button type="submit" onclick="sorting()" >search</button>
+  <button type="submit" onclick="sorting()">search</button>
 
   <button type="submit" onclick="BBCNews()" >BBC NEWS</button>
   <button type="submit" onclick="BBCSports()" >BBC SPORTS</button>
@@ -26,6 +26,8 @@
   <input type="checkbox" id="ch7" value="cnn">CNN <br>
 </form>
 
+
+<div>
 <h1 id="headline0"></h1>
 <h1 id="headline1"></h1>
 <h1 id="headline2"></h1>
@@ -36,8 +38,6 @@
 <h1 id="headline7"></h1>
 <h1 id="headline8"></h1>
 <h1 id="headline9"></h1>
-<h2 id="notfound"></h1>
-
 </div>
 <script>
 //main head lines
@@ -132,29 +132,29 @@ function CNN()
            .innerHTML=data.articles[i].title;}})
   .catch((err)=> {console.error(err);})
 }
-//searching in all channels
+//searching in all india news
 function globalSearch()
-{
+{console.log("enter");
   let x=document.getElementById("input").value;
-
-  fetch(`https://newsapi.org/v2/everything?q=${x}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
- .then(data => data.json())
-    .then(data =>{
-  // console.log(data);
-      if(data.status=="ok" && data.totalResults!=0){
-      for(let i=0;i<data.articles.length;i++)
-       {document.getElementById("headline"+i)
-         .innerHTML=data.articles[i].title;}
-  }
-  else
-       {document.getElementById("notfound").innerHTML="News Not Found Related To Your Search";}
-       })
-  .catch((err)=> {console.error(err);})
+ fetch(`https://newsapi.org/v2/top-headlines?q=${x}&sources=google-news-in&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
+   .then(data => data.json())
+  .then(data =>{
+    if(data.articles == "")
+      {
+     document.getElementById("notfound").innerHTML="News Not Found";
+        }
+    else{
+   for(var i=0;i<data.articles.length;i++){
+     document.getElementById("headline"+i).innerHTML=data.articles[i].title;}
+    }
+  })
+ .catch((err)=> {console.error(err);})
 }
 //filter
 function sorting()
 {
-  let x=document.getElementById("input").value;
+
+let x=document.getElementById("input").value;
  var search=[];
  for(i=0;i<8;i++)
  {
@@ -163,13 +163,19 @@ function sorting()
      search.push(v1);
    }
  }
-
- fetch(`https://newsapi.org/v2/top-headlines?q=${x}&sources=${search}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
+   fetch(`https://newsapi.org/v2/top-headlines?q=${x}&sources=${search}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
     .then(data => data.json())
        .then(data =>{
+         if(data.articles == "")
+         {
+              document.getElementById("headline0").innerHTML="News Not Available";
+         }
+         else{
         for(let i=0;i<data.articles.length;i++)
          {document.getElementById("headline"+i)
-           .innerHTML=data.articles[i].title;}})
+           .innerHTML=data.articles[i].title;}
+         }
+         })
    .catch((err)=> {console.error(err);})
   }
 
