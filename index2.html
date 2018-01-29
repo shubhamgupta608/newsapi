@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang ="en" xml:lang="en">
+	<head>
+        <title>Daily News</title>
+		<meta  http-equiv="content-type" content="text/html;charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" charset="utf-8">
+        <link rel="canonical shortcut icon" href="images/1.ico" />
+		
+        </head>
+    <!--Begin Top -->
+	<body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();}>
+        <div id ="top">
+            <ul>
+  <form>
+  <li><label class="container">ABC News<input type="checkbox" id="ch0" value="abc-news"><span class="checkmark"></span></label></li>
+      <li><label class="container">BBC News<input type="checkbox" id="ch1" value="bbc-news"><span class="checkmark"></span></label></li>
+      <li><label class="container">BBC Sport<input type="checkbox" id="ch2" value="bbc-sport"><span class="checkmark"></span></label></li>
+      <li><label class="container">Business-Insider<input type="checkbox" id="ch3" value="business-insider"><span class="checkmark"></span></label></li>
+      <li><label class="container">Buzzfeed<input type="checkbox" id="ch4" value="buzzfeed"><span class="checkmark"></span></label></li>
+      <li><label class="container">CNBC<input type="checkbox" id="ch5" value="cnbc"><span class="checkmark"></span></label></li>
+      <li><label class="container">CNN<input type="checkbox" id="ch6" value="cnn"><span class="checkmark"></span></label></li>
+      <li><label class="container">ESPN<input type="checkbox" id="ch7" value="espn"><span class="checkmark"></span></label></li>
+      <li><input type="text" id="input" placeholder="Search with keyword"></li>
+       <li><button type="submit" onclick="sorting()" value="Submit">Search</button></li>
+</form>
+
+ </ul>
+        </div>
+        <!-- END TOP-->
+        <!--BEGIN HEADER-->
+        <div id ="header">
+            <div id="logo"><a href="#"><img src ="images/wirefire/logo.png"  alt =""/></a></div>
+        <div id ="ad"><img src="images/ad-blank.png" alt=""/></div>
+        </div>
+        <!--END HEADER-->
+        <!--BEGIN NAV -->
+        <div id="nav">
+            <ul>
+            
+                <li><a class="ft" id="bbc-news">BBC NEWS</a></li>
+			     <li><a class="ft" id="bbc-sport">BBC SPORTS</a></li>
+                <li><a class="ft" id="abc-news">ABC</a></li>
+                <li><a class="ft" id="espn">ESPN</a></li>
+                <li><a class="ft" id="business-insider">Business Insider</a></li>
+                <li><a class="ft" id="buzzfeed">Buzzfeed</a></li>
+                <li><a class="ft" id="cnbc">CNBC</a></li>
+                 <li class="last"><a class="ft" id="cnn">CNN</a></li>
+               
+
+            </ul>
+        </div>
+        <!--END NAV-->
+ <!--BEGIN SUB NAV -->
+        <div id ="sub-nav">
+             <ul>
+                <li class="title">Stay in the know:</li>
+                <li><a href="#">Blogs</a></li>
+                <li>|</li>
+                <li><a href="#">Video Gallery</a></li>
+                <li>|</li>
+                <li><img src="images/icons/rss.png" alt="" /><a href="#">Subscribe</a></li>
+                <li>|</li>
+                <li><img src="images/icons/twitter.png" alt="" /><a href="#">Twitter</a></li>
+              </ul>
+        </div>
+        <!--END SUB NAV -->
+<div id="content-wrapper">
+    <!--BEGIN MAIN-->        
+      <div id="main">
+         <div id ="headlines">
+            <div id ="main-headline">
+             <h2 class="heading">Featured Stories</h2>
+                   
+               <!--    <a href="#" id="li0"><h1 id="headline0"></h1></a>
+                  <img src="" id="image0" alt="image not found" width="300" height="228"/>
+                  
+                  <p id="de0"></p>
+
+                  <a href="#" id="li1"><h1 id="headline1"></h1></a>
+                  <img src="" id="image1" alt="image not found" width="300" height="228"/>
+                  <p id="de1"></p>
+                  
+                  <a href="#" id="li2"><h1 id="headline2"></h1></a>
+                  <img src="" id="image2" alt="image not found" width="300" height="228"/>
+                  <p id="de2"></p>-->
+
+
+
+
+                  
+                  <img id="image0" src="" alt="image not loaded" width="300" height="228"/>
+                <a href="" id="li0"><h1 id="headline0"></h1></a>
+                  <p id="de0"></p>
+                
+                 
+                  <img id="image1"  src="" alt="image not loaded" width="300" height="228"/>
+                 <a href="" id="li1"><h1 id="headline1"></h1></a>
+                  <p id="de1"></p>
+                
+                  
+                  <img id="image2"  src="" alt="image not loaded" width="300" height="228"/>
+                <a href="" id="li2"><h1 id="headline2"></h1></a>  
+                <p id="de2"></p>
+                  
+             </div>
+           <div id="more-headlines">
+                  <h2 class="heading">Featured Stories</h2>
+                    
+                    <img id="image3" src="" alt="image not loaded" width="290" height="228"/>
+               <a href="" id="li3"><h1 id="headline3"></h1></a>     
+               <p id="de3"></p>
+                    
+                   
+                    <img id="image4" src="" alt="image not loaded" width="290" height="228"/>
+                <a href="" id="li4"><h1 id="headline4"></h1></a>    
+               <p id="de4"></p>
+                    
+                    
+                    <img id="image5" src=""  alt="image not loaded" width="290" height="228"/>
+               <a href="" id="li5"><h1 id="headline5"></h1></a>     
+               <p id="de5"></p> 
+                  
+                         </div>
+      </div>
+    </div>
+          <div id="sidebars">
+               <h2 class="heading">Featured Stories</h2>
+                <a href="" id="li6"><h1 id="headline6"></h1></a>
+                <img id="image6"  src="" alt="image not loaded" width="280" height="228"/>
+                <p id="de6"></p>
+                
+                <img id="image7"  src="" alt="image not loaded" width="280" height="228"/>
+              <a href="" id="li7"><h1 id="headline7"></h1></a>  
+              <p id="de7"></p>
+              
+              
+                <img id="image8"  src="" alt="image not loaded" width="280" height="228"/>
+                <a href="" id="li8"><h1 id="headline8"></h1></a>
+              <p id="de8"></p>
+              
+              
+                <img id="image9"  src="" alt="image not loaded" width="304" height="228"/>
+                <a href="" id="li9"><h1 id="headline9"></h1></a>
+              <p id="de9"></p>
+
+
+                  
+
+                
+         </div>
+  </div>
+
+<!--BEGIN EXTRAS-->
+        <div id="extras">
+          <div id="recommended">
+            <h2 class="heading">Recommended Stories</h2>
+            <ul>
+              <li><a href="#">Economic Survey pegs FY19 GDP growth at 7-7.5%; says current high oil prices a major concern &raquo;</a></li>
+              <li><a href="#">Women get the job done in agricultural sector, states survey &raquo;</a></li>
+              <li><a href="#">Here's why Karni Sena was right in wanting to ban Padmaavat &raquo;</a></li>
+              <li class="last"><a href="#">Janhvi Kapoor to star opposite Ranveer Singh in Simmba? &raquo;</a></li>
+            </ul>
+        </div>
+            <div id="programs">
+                <h2 class="heading">What's On Tonight</h2>
+                <img src="images/rick.jpg" alt="" /> <img src="images/cbc.png" alt="" />
+            </div>
+            <div id="cartoon">
+                <h2 class="heading">Humour</h2>
+                <img src="images/cartoon.jpg" alt="" />
+            </div>
+        </div>
+        <!-- END EXTRAS -->
+        <!-- BEGIN FOOTER -->
+<div id="footer">
+  <ul>
+    <li>&copy;2018 <a href="#">Name Here</a></li>
+    <li>|</li>
+    <li><a href="#">FAQ</a></li>
+    <li>|</li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li>|</li>
+    <li><a href="#">Careers</a></li>
+    <li>|</li>
+    <li><a href="#">Advertise</a></li>
+    <li>|</li>
+    <li><a href="#">Sitemap</a></li>
+    <li>|</li>
+    <li>Designed by <a href="http://shubham11408139.git.io/">SHUBHAM GUPTA & ANVESH REDDY</a></li>
+  </ul>
+</div>
+<!-- END FOOTER -->
+ 
+
+
+
+     <script src="script.js" type="text/javascript"></script>
+	</body>
+</html>
+
