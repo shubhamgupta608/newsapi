@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <!-- <link rel="Stylesheet" href="./s1.css" /> -->
+  <link rel="Stylesheet" href="./s1.css" />
 </head>
 <body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();} >
 
@@ -9,14 +9,14 @@
 
   <button type="submit" onclick="sorting()">search</button>
 
-  <button type="submit" onclick="BBCNews()" >BBC NEWS</button>
-  <button type="submit" onclick="BBCSports()" >BBC SPORTS</button>
-  <button type="submit" onclick="ABC()" >ABC</button>
-  <button type="submit" onclick="ESPN()" >ESPN</button>
-  <button type="submit" onclick="BusinessInsider()" >Business Insider</button>
-  <button type="submit" onclick="Buzzfeed()" >Buzzfeed</button>
-  <button type="submit" onclick="CNBC()" >CNBC</button>
-  <button type="submit" onclick="CNN()" >CNN</button>
+  <button type="submit" class="ft" id="bbc-news">BBC NEWS</button>
+  <button type="submit" class="ft" id="bbc-sport">BBC SPORTS</button>
+  <button type="submit" class="ft" id="abc-news">ABC</button>
+  <button type="submit"  class="ft" id="espn">ESPN</button>
+  <button type="submit"  class="ft" id="business-insider">Business Insider</button>
+  <button type="submit" class="ft" id="buzzfeed">Buzzfeed</button>
+  <button type="submit"  class="ft" id="cnbc">CNBC</button>
+  <button type="submit"  class="ft" id="cnn">CNN</button>
 <form>
   <input type="checkbox" id="ch0" value="bbc-news">BBC NEWS <br>
   <input type="checkbox" id="ch1" value="bbc-sport">BBC SPORTS <br>

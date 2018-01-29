@@ -14,9 +14,16 @@ function myfun()
  .catch((err)=> {console.error(err);})
 }
 //different channels
-function BBCNews()
+ var x= document.getElementsByClassName('ft');
+ var z=x.length;
+ for(let i=0;i<z;i++){
+   x[i].addEventListener("click",function(){
+     channels(this.id);
+   });
+ }
+function channels(channelname)
 {
-  fetch("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
+  fetch(`https://newsapi.org/v2/top-headlines?sources=${channelname}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
   .then(data => data.json())
        .then(data =>{
          for(var i=0;i<data.articles.length;i++)
@@ -25,97 +32,6 @@ function BBCNews()
        document.getElementById('image'+i).src =data.articles[i].urlToImage;
       document.getElementById("de"+i).innerHTML=data.articles[i].description;
     }})
-  .catch((err)=> {console.error(err);})
-}
-function BBCSports()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-         document.getElementById('image'+i).src =data.articles[i].urlToImage;
-        document.getElementById("de"+i).innerHTML=data.articles[i].description;
-      }})
-  .catch((err)=> {console.error(err);})
-}
-function ABC()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-         document.getElementById('image'+i).src =data.articles[i].urlToImage;
-        document.getElementById("de"+i).innerHTML=data.articles[i].description;
-      }})
-  .catch((err)=> {console.error(err);})
-}
-function ESPN()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=espn&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-         document.getElementById('image'+i).src=data.articles[i].urlToImage;
-        document.getElementById("de"+i).innerHTML=data.articles[i].description;
-      }})
-  .catch((err)=> {console.error(err);})
-}
-function BusinessInsider()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=business-insider&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-         document.getElementById('image'+i).src =data.articles[i].urlToImage;
-        document.getElementById("de"+i).innerHTML=data.articles[i].description;
-      }})
-  .catch((err)=> {console.error(err);})
-}
-function Buzzfeed()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-       document.getElementById('image'+i).src=data.articles[i].urlToImage;
-      document.getElementById("de"+i).innerHTML=data.articles[i].description;
-    }})
-  .catch((err)=> {console.error(err);})
-}
-function CNBC()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=cnbc&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-         document.getElementById('image'+i).src=data.articles[i].urlToImage;
-        document.getElementById("de"+i).innerHTML=data.articles[i].description;
-      }})
-  .catch((err)=> {console.error(err);})
-}
-function CNN()
-{
-  fetch("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
-  .then(data => data.json())
-       .then(data =>{
-         for(var i=0;i<data.articles.length;i++)
-         {document.getElementById("headline"+i).innerHTML=data.articles[i].title;
-         document.getElementById("li"+i).href=data.articles[i].url;
-         document.getElementById('image'+i).src=data.articles[i].urlToImage;
-        document.getElementById("de"+i).innerHTML=data.articles[i].description;
-      }})
   .catch((err)=> {console.error(err);})
 }
 //searching in all india news
