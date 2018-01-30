@@ -18,7 +18,24 @@ function myfun()
  var z=m.length;
  for(let i=0;i<z;i++){
    m[i].addEventListener("click",function(){
-     channels(this.id);
+	   var search_val=document.getElementById("input").value;
+	   
+	   if(search_val.length >0)
+	   {  
+		    document.getElementById("input").value=" ";
+	   }
+	    for(let k=0;k<8;k++)
+       {
+		   var f=document.getElementById("ch"+k).checked;
+        if(f)
+        { 
+         document.getElementById("ch"+k).checked=false;
+		 }
+      }
+
+	   
+   channels(this.id);
+    
    });
  }
 function channels(channelname)
@@ -56,7 +73,7 @@ let x=document.getElementById("input").value;
        .then(data =>{
          if(data.articles == "")
          {
-              alert("News Not Available in "+search);
+              alert("News Related to "+ x +" Not Available in "+search);
          }
          else{
         for(let i=0;i<10;i++)
@@ -64,7 +81,24 @@ let x=document.getElementById("input").value;
          document.getElementById("li"+i).href=data.articles[i].url;
          document.getElementById('image'+i).src =data.articles[i].urlToImage;
         document.getElementById("de"+i).innerHTML=data.articles[i].description;}
-         }})
+         }
+		 })
+
+		var search_val=document.getElementById("input").value;
+	   
+	   if(search_val.length >0)
+	   {  
+		    document.getElementById("input").value=" ";
+	   }
+	    for(let k=0;k<8;k++)
+       {
+		   var f=document.getElementById("ch"+k).checked;
+        if(f)
+        { 
+         document.getElementById("ch"+k).checked=false;
+		 }
+      }
+	  
 }
 else
   {
