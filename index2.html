@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 <html lang ="en" xml:lang="en">
-	<head>
-        <title>Daily News</title>
-		<meta  http-equiv="content-type" content="text/html;charset=utf-8">
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" charset="utf-8">
-        <link rel="canonical shortcut icon" href="images/1.ico" />
-		
-        </head>
+<head>
+<title>Daily News</title>
+<meta  http-equiv="content-type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" charset="utf-8">
+<link rel="canonical shortcut icon" href="images/1.ico" />
+</head>
     <!--Begin Top -->
-	<body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();}>
+<body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();}>
         <div id="top">
-            <ul>
-  <form>
+<ul>
+<form>
       <li><label class="container">ABC News<input type="checkbox" id="ch0" value="abc-news"><span class="checkmark"></span></label></li>
       <li><label class="container">BBC News<input type="checkbox" id="ch1" value="bbc-news"><span class="checkmark"></span></label></li>
       <li><label class="container">BBC Sport<input type="checkbox" id="ch2" value="bbc-sport"><span class="checkmark"></span></label></li>
@@ -21,38 +20,33 @@
       <li><label class="container">CNBC<input type="checkbox" id="ch5" value="cnbc"><span class="checkmark"></span></label></li>
       <li><label class="container">CNN<input type="checkbox" id="ch6" value="cnn"><span class="checkmark"></span></label></li>
       <li><label class="container">ESPN<input type="checkbox" id="ch7" value="espn"><span class="checkmark"></span></label></li>
-
-     
-
-      
 </form>
                 <div id=search>
                  <input type="text" id="input" placeholder="Search with keyword.....">
                    <button type="submit" class="button" onclick="sorting()">Search</button>
                 </div>
-                
- </ul>
+</ul>
         </div>
-        <!-- END TOP-->
-        <!--BEGIN HEADER-->
+    <!-- END TOP-->
+    <!--BEGIN HEADER-->
         <div id ="header">
             <div id="logo"><a href="#"><img src ="images/wirefire/logo.png"  alt =""/></a></div>
         <div id ="ad"><img src="images/ad-blank.png" alt=""/></div>
         </div>
-        <!--END HEADER-->
-        <!--BEGIN NAV -->
+    <!--END HEADER-->
+    <!--BEGIN NAV -->
         <div id="nav">
             <ul>
-            
+
                 <li><a class="ft" id="bbc-news" >BBC NEWS</a></li>
-			     <li><a class="ft"id="bbc-sport">BBC SPORTS</a></li>
+			          <li><a class="ft"id="bbc-sport">BBC SPORTS</a></li>
                 <li><a class="ft" id="abc-news">ABC</a></li>
                 <li><a class="ft" id="espn">ESPN</a></li>
                 <li><a class="ft" id="business-insider">Business Insider</a></li>
                 <li><a class="ft" id="buzzfeed">Buzzfeed</a></li>
                 <li><a class="ft" id="cnbc">CNBC</a></li>
-                 <li class="last"><a class="ft" id="cnn">CNN</a></li>
-               
+                <li class="last"><a class="ft" id="cnn">CNN</a></li>
+
 
             </ul>
         </div>
@@ -68,69 +62,24 @@
                 <li><img src="images/icons/rss.png" alt="" /><a href="#">Subscribe</a></li>
                 <li>|</li>
                 <li><img src="images/icons/twitter.png" alt="" /><a href="#">Twitter</a></li>
-              </ul>
+            </ul>
         </div>
         <!--END SUB NAV -->
 <div id="content-wrapper">
-    <!--BEGIN MAIN-->        
-      <div id="main">
-         <div id ="headlines">
-            <div id ="main-headline">
-             <h2 class="heading">Featured Stories</h2>
-                       
-                  <img id="image0" src="" alt="image not loaded" width="300" height="228"/>
-                <a href="" id="li0"><h1 id="headline0"></h1></a>
-                  <p id="de0"></p>
-                
-                 
-                  <img id="image1"  src="" alt="image not loaded" width="300" height="228"/>
-                 <a href="" id="li1"><h1 id="headline1"></h1></a>
-                  <p id="de1"></p>
-                
-                  
-                  <img id="image2"  src="" alt="image not loaded" width="300" height="228"/>
-                <a href="" id="li2"><h1 id="headline2"></h1></a>  
-                <p id="de2"></p>
-                  
-             </div>
-           <div id="more-headlines">
-                  <h2 class="heading">Featured Stories</h2>
-                    
-                    <img id="image3" src="" alt="image not loaded" width="290" height="228"/>
-               <a href="" id="li3"><h1 id="headline3"></h1></a>     
-               <p id="de3"></p>
-                    
-                   
-                    <img id="image4" src="" alt="image not loaded" width="290" height="228"/>
-                <a href="" id="li4"><h1 id="headline4"></h1></a>    
-               <p id="de4"></p>
-                    
-                    
-                    <img id="image5" src=""  alt="image not loaded" width="290" height="228"/>
-               <a href="" id="li5"><h1 id="headline5"></h1></a>     
-               <p id="de5"></p> 
-                  
-                         </div>
+    <!--BEGIN MAIN-->
+<div id="main">
+     <div id ="headlines">
+			 	 <div id ="main-headline">
+             <h2 class="heading">Featured Stories</h2></div>
+               <div id="more-headlines">
+                      <h2 class="heading">Featured Stories</h2>
+				</div>
       </div>
-    </div>
-          <div id="sidebars">
+</div>
+
+ <div id="sidebars">
                <h2 class="heading">Featured Stories</h2>
-              
-              <img id="image6"  src="" alt="image not loaded" width="280" height="228"/> 
-               <a href="" id="li6"><h1 id="headline6"></h1></a>
-                <p id="de6"></p>
-                
-                <img id="image7"  src="" alt="image not loaded" width="280" height="228"/>
-              <a href="" id="li7"><h1 id="headline7"></h1></a>  
-              <p id="de7"></p>
-              
-              
-                <img id="image8"  src="" alt="image not loaded" width="280" height="228"/>
-                <a href="" id="li8"><h1 id="headline8"></h1></a>
-              <p id="de8"></p>
-              
-                
-         </div>
+</div>
   </div>
 
 <!--BEGIN EXTRAS-->
@@ -173,8 +122,7 @@
   </ul>
 </div>
 <!-- END FOOTER -->
- 
+
 <script src="script.js"></script>
 	</body>
 </html>
-
