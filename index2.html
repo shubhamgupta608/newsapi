@@ -8,11 +8,11 @@
 		
         </head>
     <!--Begin Top -->
-	<body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();>
+	<body onload="myfun()" onkeypress=if(event.keyCode==13){sorting();}>
         <div id="top">
             <ul>
   <form>
-  <li><label class="container">ABC News<input type="checkbox" id="ch0" value="abc-news"><span class="checkmark"></span></label></li>
+      <li><label class="container">ABC News<input type="checkbox" id="ch0" value="abc-news"><span class="checkmark"></span></label></li>
       <li><label class="container">BBC News<input type="checkbox" id="ch1" value="bbc-news"><span class="checkmark"></span></label></li>
       <li><label class="container">BBC Sport<input type="checkbox" id="ch2" value="bbc-sport"><span class="checkmark"></span></label></li>
       <li><label class="container">Business-Insider<input type="checkbox" id="ch3" value="business-insider"><span class="checkmark"></span></label></li>
@@ -20,10 +20,14 @@
       <li><label class="container">CNBC<input type="checkbox" id="ch5" value="cnbc"><span class="checkmark"></span></label></li>
       <li><label class="container">CNN<input type="checkbox" id="ch6" value="cnn"><span class="checkmark"></span></label></li>
       <li><label class="container">ESPN<input type="checkbox" id="ch7" value="espn"><span class="checkmark"></span></label></li>
-      <li><input type="text" id="input" placeholder="Search with keyword"></li>
+     
     
 </form>
-   <li><button type="submit" onclick="sorting()">Search</button></li>
+                <div id=search>
+                 <input type="text" id="input" placeholder="Search with keyword.....">
+                   <button type="submit" class="button" onclick="sorting()">Search</button>
+                </div>
+                
  </ul>
         </div>
         <!-- END TOP-->
@@ -70,24 +74,7 @@
          <div id ="headlines">
             <div id ="main-headline">
              <h2 class="heading">Featured Stories</h2>
-                   
-               <!--    <a href="#" id="li0"><h1 id="headline0"></h1></a>
-                  <img src="" id="image0" alt="image not found" width="300" height="228"/>
-                  
-                  <p id="de0"></p>
-
-                  <a href="#" id="li1"><h1 id="headline1"></h1></a>
-                  <img src="" id="image1" alt="image not found" width="300" height="228"/>
-                  <p id="de1"></p>
-                  
-                  <a href="#" id="li2"><h1 id="headline2"></h1></a>
-                  <img src="" id="image2" alt="image not found" width="300" height="228"/>
-                  <p id="de2"></p>-->
-
-
-
-
-                  
+                       
                   <img id="image0" src="" alt="image not loaded" width="300" height="228"/>
                 <a href="" id="li0"><h1 id="headline0"></h1></a>
                   <p id="de0"></p>
@@ -125,8 +112,9 @@
     </div>
           <div id="sidebars">
                <h2 class="heading">Featured Stories</h2>
-                <a href="" id="li6"><h1 id="headline6"></h1></a>
-                <img id="image6"  src="" alt="image not loaded" width="280" height="228"/>
+              
+              <img id="image6"  src="" alt="image not loaded" width="280" height="228"/> 
+               <a href="" id="li6"><h1 id="headline6"></h1></a>
                 <p id="de6"></p>
                 
                 <img id="image7"  src="" alt="image not loaded" width="280" height="228"/>
@@ -138,14 +126,6 @@
                 <a href="" id="li8"><h1 id="headline8"></h1></a>
               <p id="de8"></p>
               
-              
-                <img id="image9"  src="" alt="image not loaded" width="304" height="228"/>
-                <a href="" id="li9"><h1 id="headline9"></h1></a>
-              <p id="de9"></p>
-
-
-                  
-
                 
          </div>
   </div>
