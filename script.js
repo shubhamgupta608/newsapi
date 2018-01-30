@@ -26,8 +26,8 @@ function myfun()
 	   }
 	    for(let k=0;k<8;k++)
        {
-		   var f=document.getElementById("ch"+k).checked;
-        if(f)
+		   
+        if(document.getElementById("ch"+k).checked)
         { 
          document.getElementById("ch"+k).checked=false;
 		 }
