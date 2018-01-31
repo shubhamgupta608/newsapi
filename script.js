@@ -19,7 +19,7 @@ function myfun()
          }
          else if(i<6) {
 
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="290" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
 
@@ -28,7 +28,7 @@ function myfun()
              var h=document.getElementById('more-headlines');
              h.appendChild(l);
          }
-         else if(i<10)
+         else if(i<9)
          {
            var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
@@ -90,7 +90,7 @@ function channels(channelname)
          }
          else if(i<6) {
 
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
+            var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="290" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
           var l= document.createElement('div');
@@ -98,7 +98,7 @@ function channels(channelname)
              var h=document.getElementById('more-headlines');
              h.appendChild(l);
          }
-         else if(i<10)
+         else if(i<9)
          {
            var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
@@ -141,7 +141,7 @@ let x=document.getElementById("input").value;
       document.getElementById("sidebars").innerHTML="";
         for(let i=0;i<data.articles.length;i++)
     {
-        if(i<3)
+        if(i<4)
          {
          var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
          <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
@@ -151,9 +151,9 @@ let x=document.getElementById("input").value;
            var h=document.getElementById('main-headline');
            h.appendChild(l);
          }
-         else if(i<6) {
+         else if(i<7) {
 
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="290" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
 
@@ -162,7 +162,7 @@ let x=document.getElementById("input").value;
              var h=document.getElementById('more-headlines');
              h.appendChild(l);
          }
-         else if(i<10)
+         else if(i<11)
          {
            var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
