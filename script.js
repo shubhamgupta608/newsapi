@@ -8,19 +8,18 @@ function myfun()
        {
          if(i<3)
          {
-         var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+         var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
          <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
            <p id="de">${data.articles[i].description}</p>`;
 
        var l= document.createElement('div');
-           // l.setAttribute("id","main-headline")
-             l.innerHTML=t;
+      l.innerHTML=t;
            var h=document.getElementById('main-headline');
            h.appendChild(l);
          }
          else if(i<6) {
 
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
 
@@ -31,7 +30,7 @@ function myfun()
          }
          else if(i<10)
          {
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
 
@@ -81,7 +80,7 @@ function channels(channelname)
          for(let i=0;i<data.articles.length;i++)
          { if(i<3)
          {
-         var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+         var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
          <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
            <p id="de">${data.articles[i].description}</p>`;
          var l= document.createElement('div');
@@ -91,7 +90,7 @@ function channels(channelname)
          }
          else if(i<6) {
 
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
           var l= document.createElement('div');
@@ -101,7 +100,7 @@ function channels(channelname)
          }
          else if(i<10)
          {
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
          var l= document.createElement('div');
@@ -144,7 +143,7 @@ let x=document.getElementById("input").value;
     {
         if(i<3)
          {
-         var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+         var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
          <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
            <p id="de">${data.articles[i].description}</p>`;
          var l= document.createElement('div');
@@ -154,7 +153,7 @@ let x=document.getElementById("input").value;
          }
          else if(i<6) {
 
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
 
@@ -165,7 +164,7 @@ let x=document.getElementById("input").value;
          }
          else if(i<10)
          {
-           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not loaded" width="300" height="228"/>
+           var t=`<img id="image"  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id="li"><h1 id="headline">${data.articles[i].title}</h1></a>
              <p id="de">${data.articles[i].description}</p>`;
 
