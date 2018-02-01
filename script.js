@@ -1,9 +1,9 @@
-
 function myfun()
 {
  fetch("https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
   .then(data => data.json())
      .then(data =>{
+     
       for(let i=0;i<data.articles.length;i++)
        {
          if(i<3)
