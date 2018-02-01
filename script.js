@@ -3,8 +3,9 @@ function myfun()
   fetch("https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=94e25a4c66eb4ea791f3898bdce7bcea")
   .then(data => data.json())
      .then(data =>{
-data1=data;
+   data1=data;
   for(let i=0;i<data.articles.length;i++)
+
        {
          if(i<3)
          {
@@ -65,6 +66,7 @@ data1=data;
       }
 
 channels(this.id);
+Categories(this.name);
 
    });
  }
@@ -112,6 +114,53 @@ function channels(channelname)
     }})
   .catch((err)=> {console.error(err);})
 }
+
+function Categories(name1)
+{
+
+  document.getElementById("more-headlines").innerHTML="";
+  document.getElementById("main-headline").innerHTML="";
+  document.getElementById("sidebars").innerHTML="";
+  fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${name1}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
+  .then(data => data.json())
+       .then(data =>{
+         data1=data;
+         for(let i=0;i<data.articles.length;i++)
+         { if(i<3)
+         {
+           var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
+           <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
+             <p id=de${i}>${data.articles[i].description}</p>`;
+         var l= document.createElement('div');
+           l.innerHTML=t;
+           var h=document.getElementById('main-headline');
+           h.appendChild(l);
+         }
+         else if(i<6) {
+
+           var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
+           <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
+             <p id=de${i}>${data.articles[i].description}</p>`;
+          var l= document.createElement('div');
+              l.innerHTML=t;
+             var h=document.getElementById('more-headlines');
+             h.appendChild(l);
+         }
+         else if(i<9)
+         {
+           var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
+           <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
+             <p id=de${i}>${data.articles[i].description}</p>`;
+         var l= document.createElement('div');
+               l.innerHTML=t;
+             var h=document.getElementById('sidebars');
+             h.appendChild(l);
+         }
+    }})
+  .catch((err)=> {console.error(err);})
+}
+
+
 //filter
 function sorting()
 {
