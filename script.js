@@ -13,7 +13,7 @@ function myfun()
          <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
            <p id=de${i}>${data.articles[i].description}</p>`;
 
-       var l= document.createElement('div');
+        var l= document.createElement('div');
           l.innerHTML=t;
            var h=document.getElementById('main-headline');
            h.appendChild(l);
@@ -64,10 +64,11 @@ function myfun()
          document.getElementById("ch"+k).checked=false;
 		 }
       }
-
+if(this.id)
 channels(this.id);
+else{
 Categories(this.name);
-
+}
    });
  }
 function channels(channelname)
@@ -80,8 +81,9 @@ function channels(channelname)
   .then(data => data.json())
        .then(data =>{
          data1=data;
-         for(let i=0;i<data.articles.length;i++)
-         { if(i<3)
+           for(let i=0;i<10;i++)
+         {
+           if(i<3)
          {
            var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
@@ -203,7 +205,7 @@ function sorting()
       document.getElementById("more-headlines").innerHTML="";
      document.getElementById("main-headline").innerHTML="";
      document.getElementById("sidebars").innerHTML="";
-console.log("command received");
+
 alert(more());
 
 // var t=`<button type="submit" id="btn" >more-news</button>`;
@@ -282,9 +284,10 @@ function more()
 {
   let x=document.getElementById("input").value;
 
-    fetch(`https://newsapi.org/v2/everything?q=${x}&sources=google-news-in&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
+    fetch(`https://newsapi.org/v2/everything?q=${x}&pagesize=50&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
   .then(data=>data.json())
   .then(data =>{
+
     document.getElementById("more-headlines").innerHTML="";
     document.getElementById("main-headline").innerHTML="";
     document.getElementById("sidebars").innerHTML="";
@@ -296,15 +299,15 @@ function more()
           var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
              <p id=de${i}>${data.articles[i].description}</p>`;
-             // if(data.articles[i].url=="")
-             // {
-             //
-             // }
-
+             if(data.articles[i].urlToImage == null)
+             {
+             document.getElementById("main-headline").innerHTML="";
+           }else{
          var l= document.createElement('div');
           l.innerHTML=t;
            var h=document.getElementById('main-headline');
            h.appendChild(l);
+         }
          }
          else if(i<7) {
 
@@ -312,20 +315,31 @@ function more()
            <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
              <p id=de${i}>${data.articles[i].description}</p>`;
 
+             if(data.articles[i].urlToImage == null)
+             {
+             document.getElementById("more-headlines").innerHTML="";
+           }else{
+
              var l= document.createElement('div');
-              l.innerHTML=t;
-             var h=document.getElementById('more-headlines');
-             h.appendChild(l);
+          l.innerHTML=t;
+           var h=document.getElementById('more-headlines');
+           h.appendChild(l);
+         }
          }
          else if(i<11)
          {
              var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
               <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
               <p id=de${i}>${data.articles[i].description}</p>`;
-                var l= document.createElement('div');
-                l.innerHTML=t;
-                 var h=document.getElementById('sidebars');
-                  h.appendChild(l);
+              if(data.articles[i].urlToImage == null)
+              {
+              document.getElementById("sidebars").innerHTML="";
+            }else{
+            var l= document.createElement('div');
+           l.innerHTML=t;
+            var h=document.getElementById('sidebars');
+            h.appendChild(l);
+          }
           }
       }
   });
