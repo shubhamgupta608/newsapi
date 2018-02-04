@@ -67,6 +67,7 @@ function myfun()
 if(this.id)
 channels(this.id);
 else{
+  console.log("hello name");
 Categories(this.name);
 }
    });
@@ -127,6 +128,7 @@ function Categories(name1)
   .then(data => data.json())
        .then(data =>{
          data1=data;
+         console.log(data1);
          for(let i=0;i<data.articles.length;i++)
          { if(i<3)
          {
@@ -163,22 +165,26 @@ function Categories(name1)
 }
 
 
-//filter
+
 function sorting()
 {
+check_value=0;
   a=[];
   let x=document.getElementById("input").value;
   var search=[];
    for(let k=0;k<8;k++)
   {
-    var check=document.getElementById("ch"+k).checked;
-   if(check)
-   { let v1=document.getElementById("ch"+k).value;
-     search.push(v1);
+    if(document.getElementById("ch"+k).checked)
+  {
+    check_value=check_value+1;
+    let v1=document.getElementById("ch"+k).value;
+    search.push(v1);
    }
   }
 
- if(x!="")
+
+
+if(x!=""&&check_value == 0)
  {
   data1.articles.forEach(function(e){
     let t=e.title.includes(x);
@@ -186,7 +192,8 @@ function sorting()
     if(t==true||d==true)
     { a.push(e);}
     });
-    if(a.length>0)
+
+if(a.length>0)
     {
        document.getElementById("more-headlines").innerHTML="";
       document.getElementById("main-headline").innerHTML="";
@@ -203,23 +210,21 @@ function sorting()
     }
     else {
       document.getElementById("more-headlines").innerHTML="";
-     document.getElementById("main-headline").innerHTML="";
-     document.getElementById("sidebars").innerHTML="";
+      document.getElementById("main-headline").innerHTML="";
+      document.getElementById("sidebars").innerHTML="";
 
-alert(more());
-
+     alert(more());
+    }
 // var t=`<button type="submit" id="btn" >more-news</button>`;
 //
 //   var l= document.createElement('div');
 //     l.innerHTML=t;
 //    var h=document.getElementById('main-headline');
 //    h.appendChild(l);
-
-    }
-
 }
 
-if(x.length>0 && check)
+
+if(x.length>0 && check_value>0)
  {
    console.log("checking");
    fetch(`https://newsapi.org/v2/everything?q=${x}&sources=${search}&apiKey=94e25a4c66eb4ea791f3898bdce7bcea`)
@@ -299,6 +304,7 @@ function more()
           var t=`<img id=image${i}  src="${data.articles[i].urlToImage}" alt="image not Found" width="300" height="228"/>
            <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
              <p id=de${i}>${data.articles[i].description}</p>`;
+
              if(data.articles[i].urlToImage == null)
              {
              document.getElementById("main-headline").innerHTML="";
@@ -315,7 +321,7 @@ function more()
            <a href="${data.articles[i].url}" id=li${i}><h1 id=headline${i}>${data.articles[i].title}</h1></a>
              <p id=de${i}>${data.articles[i].description}</p>`;
 
-             if(data.articles[i].urlToImage == null)
+             if(data.articles[i].urlToImage == null )
              {
              document.getElementById("more-headlines").innerHTML="";
            }else{
